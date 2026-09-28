@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Vaishnavi 💗</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#fdf1f5;
+    color:#5b3543;
+    overflow:hidden;
+}
+
+.slider{
+    width:100%;
+    height:100vh;
+    position:relative;
+}
+
+.slide{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+    overflow:hidden;
+}
+
+.slide.active{
+    display:flex;
+}
+
+
+/* =========================
+   SLIDE 1
+========================= */
+
+.slide1{
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #fff 0 4%,
+            transparent 5%
+        ),
+        linear-gradient(
+            135deg,
+            #fff4f7,
+            #f9dce7,
+            #fff7f2
+        );
+
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.intro-box{
+    width:90%;
+    max-width:500px;
+    padding:35px 20px;
+    position:relative;
+}
+
+.small-text{
+    font-size:17px;
+    letter-spacing:2px;
+    color:#9d6579;
+    margin-bottom:15px;
+}
+
+.intro-box h1{
+    font-size:clamp(42px,12vw,75px);
+    color:#c85d80;
+    margin-bottom:10px;
+    text-shadow:2px 3px 0 #fff;
+}
+
+.intro-box h2{
+    font-size:clamp(24px,7vw,42px);
+    color:#704052;
+    margin-bottom:28px;
+}
+
+.intro-box p{
+    font-size:16px;
+    line-height:1.7;
+    color:#855467;
+    margin-bottom:30px;
+}
+
+.open-btn,
+.next-btn,
+.back-btn{
+    border:none;
+    background:#c85d80;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    font-size:16px;
+    font-family:inherit;
+    cursor:pointer;
+    box-shadow:
+        0 7px 18px rgba(150,70,100,.25);
+    transition:.3s;
+}
+
+.open-btn:hover,
+.next-btn:hover,
+.back-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:#ad496b;
+}
+
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:absolute;
+    font-size:25px;
+    animation:float 4s ease-in-out infinite;
+}
+
+.h1{
+    top:8%;
+    left:10%;
+}
+
+.h2{
+    top:18%;
+    right:12%;
+    animation-delay:1s;
+}
+
+.h3{
+    bottom:15%;
+    left:13%;
+    animation-delay:2s;
+}
+
+.h4{
+    bottom:10%;
+    right:15%;
+    animation-delay:1.5s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   SLIDE 2
+========================= */
+
+.slide2{
+    background:
+        linear-gradient(
+            135deg,
+            #fff4f7,
+            #f8e9df,
+            #fdeff3
+        );
+
+    flex-direction:column;
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:
+        25px 12px 65px;
+}
+
+.memory-title{
+    text-align:center;
+    margin-bottom:8px;
+    z-index:20;
+}
+
+.memory-title h2{
+    font-size:clamp(30px,8vw,48px);
+    color:#9c526c;
+    margin-bottom:5px;
+}
+
+.memory-title p{
+    color:#8d6871;
+    font-size:15px;
+}
+
+
+/* =========================
+   PHOTO COLLAGE
+========================= */
+
+.free-photos{
+    position:relative;
+    width:min(94%, 760px);
+    max-width:760px;
+    flex:1;
+    min-height:0;
+    margin:8px auto 2px;
+    padding:8px 4px 6px;
+    overflow:hidden;
+
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    gap:10px;
+    align-content:center;
+    justify-items:center;
+}
+
+/* SAME SIZE PHOTO FRAMES */
+
+.free-photo{
+    position:relative;
+    width:min(21vw, 155px);
+    height:min(28vw, 195px);
+    min-width:62px;
+    min-height:82px;
+
+    padding:5px;
+    background:#fff;
+    border:1px solid #ead7dc;
+    border-radius:10px;
+
+    box-shadow:
+        0 8px 20px rgba(70,35,45,.18);
+
+    overflow:hidden;
+    z-index:5;
+}
+
+.free-photo img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    border-radius:6px;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* COLLAGE ROTATION */
+
+.free-photo.photo1{ transform:rotate(-4deg); }
+.free-photo.photo2{ transform:rotate(2deg); }
+.free-photo.photo3{ transform:rotate(-2deg); }
+.free-photo.photo4{ transform:rotate(4deg); }
+.free-photo.photo5{ transform:rotate(3deg); }
+.free-photo.photo6{ transform:rotate(-3deg); }
+.free-photo.photo7{ transform:rotate(2deg); }
+.free-photo.photo8{ transform:rotate(-4deg); }
+
+/* =========================
+   ANIMATED EMOJIS
+========================= */
+
+.memory-emoji{
+    position:absolute;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:15;
+
+    animation:
+        memoryFloat 3.5s ease-in-out infinite;
+}
+
+.mem1{
+    left:3%;
+    top:20%;
+    font-size:28px;
+}
+
+.mem2{
+    right:5%;
+    top:25%;
+    font-size:26px;
+    animation-delay:.7s;
+}
+
+.mem3{
+    left:8%;
+    bottom:12%;
+    font-size:23px;
+    animation-delay:1.2s;
+}
+
+.mem4{
+    right:9%;
+    bottom:15%;
+    font-size:27px;
+    animation-delay:1.8s;
+}
+
+.mem5{
+    left:47%;
+    top:8%;
+    font-size:20px;
+    animation-delay:.4s;
+}
+
+.mem6{
+    right:38%;
+    bottom:5%;
+    font-size:22px;
+    animation-delay:1.5s;
+}
+
+.mem7{
+    left:36%;
+    top:25%;
+    font-size:18px;
+    animation-delay:2s;
+}
+
+@keyframes memoryFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-10px) rotate(8deg);
+    }
+
+}
+
+
+@media (max-width:520px){
+
+    .free-photos{
+        width:96%;
+        gap:7px;
+        padding:6px 2px;
+    }
+
+    .free-photo{
+        width:20vw;
+        height:27vw;
+        min-width:62px;
+        min-height:82px;
+        padding:4px;
+    }
+
+}
+
+/* =========================
+   SLIDE 3
+========================= */
+
+.slide3{
+    background:
+        radial-gradient(
+            circle at top,
+            #fff,
+            #fff2f6 45%,
+            #f5dce6
+        );
+
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    overflow-y:auto;
+}
+
+.note{
+    width:100%;
+    max-width:650px;
+
+    background:#fffdf9;
+
+    padding:35px 28px;
+
+    border-radius:6px;
+
+    box-shadow:
+        0 15px 40px rgba(100,50,70,.18);
+
+    position:relative;
+
+    border:1px solid #ead7d9;
+}
+
+.note:before,
+.note:after{
+    content:"";
+
+    position:absolute;
+
+    width:75px;
+    height:22px;
+
+    background:
+        rgba(225,188,190,.6);
+
+    top:-10px;
+}
+
+.note:before{
+    left:30px;
+    transform:rotate(-5deg);
+}
+
+.note:after{
+    right:30px;
+    transform:rotate(5deg);
+}
+
+.note h2{
+    text-align:center;
+
+    color:#bd5a78;
+
+    font-size:
+        clamp(30px,8vw,45px);
+
+    margin-bottom:20px;
+}
+
+.note p{
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#654651;
+
+    margin-bottom:14px;
+}
+
+.signature{
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:#bd5a78;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn{
+    position:fixed;
+
+    top:15px;
+    right:15px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.9);
+
+    box-shadow:
+        0 5px 15px rgba(80,40,50,.15);
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:1000;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation{
+    position:fixed;
+
+    bottom:18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:1000;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#d7a6b5;
+}
+
+.dot.active{
+    width:25px;
+
+    border-radius:10px;
+
+    background:#bd5a78;
+}
+
+.nav-buttons{
+    position:fixed;
+
+    bottom:18px;
+    right:18px;
+
+    display:flex;
+
+    gap:7px;
+
+    z-index:1000;
+}
+
+.nav-small{
+    border:none;
+
+    background:
+        rgba(255,255,255,.9);
+
+    color:#a4516c;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 4px 12px rgba(80,40,50,.15);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .slide2{
+        padding:
+            22px 8px 60px;
+    }
+
+    .memory-title{
+        margin-bottom:5px;
+    }
+
+    .memory-title h2{
+        font-size:30px;
+    }
+
+    .memory-title p{
+        font-size:13px;
+    }
+
+    .photo-picker{
+        margin:6px auto 3px;
+    }
+
+    .photo-picker label{
+        padding:8px 16px;
+        font-size:13px;
+    }
+
+    .free-photos{
+        width:100%;
+    }
+
+    .free-photo{
+        width:105px;
+        height:135px;
+    }
+
+    .free-photo.photo1{
+        left:2%;
+        top:8%;
+    }
+
+    .free-photo.photo2{
+        left:31%;
+        top:3%;
+    }
+
+    .free-photo.photo3{
+        right:2%;
+        top:8%;
+    }
+
+    .free-photo.photo4{
+        left:2%;
+        top:53%;
+    }
+
+    .free-photo.photo5{
+        left:37%;
+        top:51%;
+    }
+
+    .free-photo.photo6{
+        right:2%;
+        top:53%;
+    }
+
+    .free-photo.photo7{
+        left:17%;
+        top:28%;
+    }
+
+    .free-photo.photo8{
+        right:17%;
+        top:29%;
+    }
+
+    .mem1{
+        left:1%;
+        top:22%;
+    }
+
+    .mem2{
+        right:1%;
+        top:25%;
+    }
+
+    .mem3{
+        left:3%;
+        bottom:10%;
+    }
+
+    .mem4{
+        right:3%;
+        bottom:13%;
+    }
+
+    .mem5{
+        left:47%;
+        top:5%;
+    }
+
+    .mem6{
+        right:35%;
+        bottom:4%;
+    }
+
+    .mem7{
+        left:38%;
+        top:25%;
+    }
+
+    .note{
+        padding:30px 20px;
+    }
+
+    .note p{
+        font-size:15px;
+        line-height:1.75;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="slider">
+
+
+<!-- =========================
+     SLIDE 1
+========================= -->
+
+<section class="slide slide1 active">
+
+    <div class="heart h1">💗</div>
+    <div class="heart h2">✨</div>
+    <div class="heart h3">🌸</div>
+    <div class="heart h4">💖</div>
+
+    <div class="intro-box">
+
+        <div class="small-text">
+            A little surprise for
+        </div>
+
+        <h1>Vaishnavi</h1>
+
+        <h2>Happy Birthday 🎂✨</h2>
+
+        <p>
+            A tiny corner of memories,
+            laughter and friendship made
+            especially for you. 💕
+        </p>
+
+        <button
+            class="open-btn"
+            onclick="startBirthday()"
+        >
+            Open Your Surprise 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SLIDE 2
+========================= -->
+
+<section class="slide slide2">
+
+    <div class="memory-title">
+
+        <h2>Little Memories 📸</h2>
+
+        <p>
+            Our little memories together 💗
+        </p>
+
+    </div>
+
+
+    <div class="free-photos">
+
+        <div class="free-photo photo1">
+            <img src="photos/photo1.jpg" alt="Memory 1">
+        </div>
+
+        <div class="free-photo photo2">
+            <img src="photos/photo2.jpg" alt="Memory 2">
+        </div>
+
+        <div class="free-photo photo3">
+            <img src="photos/photo3.jpg" alt="Memory 3">
+        </div>
+
+        <div class="free-photo photo4">
+            <img src="photos/photo4.jpg" alt="Memory 4">
+        </div>
+
+        <div class="free-photo photo5">
+            <img src="photos/photo5.jpg" alt="Memory 5">
+        </div>
+
+        <div class="free-photo photo6">
+            <img src="photos/photo6.jpg" alt="Memory 6">
+        </div>
+
+        <div class="free-photo photo7">
+            <img src="photos/photo7.jpg" alt="Memory 7">
+        </div>
+
+        <div class="free-photo photo8">
+            <img src="photos/photo8.jpg" alt="Memory 8">
+        </div>
+
+
+        <!-- ANIMATED EMOJIS -->
+
+        <div class="memory-emoji mem1">🌷</div>
+        <div class="memory-emoji mem2">🦋</div>
+        <div class="memory-emoji mem3">💗</div>
+        <div class="memory-emoji mem4">🌸</div>
+        <div class="memory-emoji mem5">✨</div>
+        <div class="memory-emoji mem6">🎀</div>
+        <div class="memory-emoji mem7">💕</div>
+
+    </div>
+
+
+    <button
+        class="next-btn"
+        onclick="goToSlide(2)"
+        style="margin-top:8px;"
+    >
+        One More Thing 💕
+    </button>
+
+</section>
+
+
+<!-- =========================
+     SLIDE 3
+========================= -->
+
+<section class="slide slide3">
+
+    <div class="note">
+
+        <h2>For My Best Friend ♾️💗</h2>
+
+        <p>
+            Happy Birthday to one of the most special people
+            in my life. 🥹❤️
+        </p>
+
+        <p>
+            From all our random conversations to our endless
+            hangouts, silly moments, laughs and memories,
+            I honestly wouldn't trade any of it for anything.
+            ✨
+        </p>
+
+        <p>
+            You are not just my friend — you're my best friend,
+            my comfort person and a part of so many of my
+            favourite memories. ♾️
+        </p>
+
+        <p>
+            I hope every wish you make comes true, and that
+            life gives you all the happiness you deserve.
+            I also hope you always meet good people with
+            genuine hearts who truly value you. 🌷
+        </p>
+
+        <p>
+            No matter how much life changes, I hope our
+            friendship always stays special. Here's to more
+            plans, more hangouts, more laughter, more crazy
+            moments and so many memories still waiting for us.
+            💕
+        </p>
+
+        <p>
+            Best friends, countless memories, and hopefully
+            forever. ♾️
+        </p>
+
+        <div class="signature">
+            Happy Birthday once again, Vaishnavi. 🎂💗<br>
+            Love you, bestie. ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+<!-- MUSIC -->
+
+<button
+    class="music-btn"
+    id="musicBtn"
+    onclick="toggleMusic()"
+>
+    🎵
+</button>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+    <div class="dot active" id="dot0"></div>
+    <div class="dot" id="dot1"></div>
+    <div class="dot" id="dot2"></div>
+
+</div>
+
+
+<div class="nav-buttons">
+
+    <button
+        class="nav-small"
+        onclick="previousSlide()"
+    >
+        ‹
+    </button>
+
+    <button
+        class="nav-small"
+        onclick="nextSlide()"
+    >
+        ›
+    </button>
+
+</div>
+
+
+<!-- PART 2 JAVASCRIPT WILL COME HERE -->
+  <script>
+
+/* =========================
+   SLIDE NAVIGATION
+========================= */
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+let currentSlide = 0;
+
+function goToSlide(number){
+
+    if(number < 0){
+        number = slides.length - 1;
+    }
+
+    if(number >= slides.length){
+        number = 0;
+    }
+
+    currentSlide = number;
+
+    slides.forEach((slide,index)=>{
+
+        slide.classList.toggle(
+            "active",
+            index === currentSlide
+        );
+
+    });
+
+    dots.forEach((dot,index)=>{
+
+        dot.classList.toggle(
+            "active",
+            index === currentSlide
+        );
+
+    });
+
+}
+
+
+/* NEXT */
+
+function nextSlide(){
+
+    goToSlide(currentSlide + 1);
+
+}
+
+
+/* PREVIOUS */
+
+function previousSlide(){
+
+    goToSlide(currentSlide - 1);
+
+}
+
+
+/* =========================
+   START BIRTHDAY
+========================= */
+
+function startBirthday(){
+
+    goToSlide(1);
+
+    startMusic();
+
+}
+
+
+/* =========================
+   PHOTO COLLAGE
+========================= */
+
+/*
+   Photos are loaded automatically from the
+   GitHub /photos folder. All eight frames
+   use the same dimensions and object-fit: cover.
+*/
+
+document.querySelectorAll(".free-photo img").forEach(img=>{
+    img.addEventListener("error", ()=>{
+        img.style.visibility = "hidden";
+    });
+});
+
+
+/* =========================
+   MUSIC
+========================= */
+
+let audioContext = null;
+
+let musicPlaying = false;
+
+let musicTimer = null;
+
+let musicIndex = 0;
+
+
+/* LITTLE BIRTHDAY MELODY */
+
+const melody = [
+
+    // Happy birthday to you
+    261.63,
+    261.63,
+    293.66,
+    261.63,
+    349.23,
+    329.63,
+
+    // Happy birthday to you
+    261.63,
+    261.63,
+    293.66,
+    261.63,
+    392.00,
+    349.23,
+
+    // Happy birthday dear Vaishnavi
+    261.63,
+    261.63,
+    523.25,
+    440.00,
+    349.23,
+    329.63,
+    293.66,
+
+    // Happy birthday to you
+    466.16,
+    466.16,
+    440.00,
+    349.23,
+    392.00,
+    349.23
+
+];
+
+
+function playNote(){
+
+    if(!musicPlaying) return;
+
+
+    if(!audioContext){
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+
+    if(
+        audioContext.state ===
+        "suspended"
+    ){
+
+        audioContext.resume();
+
+    }
+
+
+    const oscillator =
+        audioContext.createOscillator();
+
+
+    const gain =
+        audioContext.createGain();
+
+
+    oscillator.type = "sine";
+
+
+    oscillator.frequency.value =
+        melody[musicIndex];
+
+
+    gain.gain.setValueAtTime(
+        0.0001,
+        audioContext.currentTime
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.08,
+        audioContext.currentTime + 0.03
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.0001,
+        audioContext.currentTime + 0.65
+    );
+
+
+    oscillator.connect(gain);
+
+    gain.connect(
+        audioContext.destination
+    );
+
+
+    oscillator.start();
+
+    oscillator.stop(
+        audioContext.currentTime + 0.7
+    );
+
+
+    musicIndex =
+        (musicIndex + 1) %
+        melody.length;
+
+
+    musicTimer =
+        setTimeout(
+            playNote,
+            700
+        );
+
+}
+
+
+/* START MUSIC */
+
+function startMusic(){
+
+    if(musicPlaying) return;
+
+
+    musicPlaying = true;
+
+    musicIndex = 0;
+
+
+    if(!audioContext){
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+
+    if(
+        audioContext.state ===
+        "suspended"
+    ){
+
+        audioContext.resume();
+
+    }
+
+
+    playNote();
+
+
+    document.getElementById(
+        "musicBtn"
+    ).textContent = "🎶";
+
+}
+
+
+/* PAUSE MUSIC */
+
+function stopMusic(){
+
+    musicPlaying = false;
+
+
+    clearTimeout(
+        musicTimer
+    );
+
+
+    musicTimer = null;
+
+
+    document.getElementById(
+        "musicBtn"
+    ).textContent = "🎵";
+
+}
+
+
+/* PLAY / PAUSE */
+
+function toggleMusic(){
+
+    if(musicPlaying){
+
+        stopMusic();
+
+    }else{
+
+        startMusic();
+
+    }
+
+}
+
+
+/* =========================
+   DOT CLICK
+========================= */
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener(
+        "click",
+        function(){
+
+            goToSlide(index);
+
+        }
+    );
+
+});
+
+
+/* =========================
+   INITIAL SLIDE
+========================= */
+
+goToSlide(0);
+
+</script>
+
+</body>
+</html>
